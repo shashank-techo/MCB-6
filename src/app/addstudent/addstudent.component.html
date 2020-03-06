@@ -1,0 +1,48 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-xs-10 col-md-10">
+            <h3>Add New Student</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div  class="col-sm-10 col-xs-10 col-md-10">
+            <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                <div class="form-group">
+                  <label for="studentName">Student Name</label>
+                  <input type="text" class="form-control" id="studentName"  formControlName="studentName" required placeholder="Enter Full name">
+                  <div *ngIf="checkoutForm.controls['studentName'].invalid && (checkoutForm.controls['studentName'].dirty || checkoutForm.controls['studentName'].touched)" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls['studentName'].errors.required">
+                        Student Name is required.
+                    </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="level">Level</label>
+                  <input type="text" class="form-control" id="level" formControlName="level" required placeholder="Enter level">
+                  <div *ngIf="checkoutForm.controls['level'].invalid && (checkoutForm.controls['level'].dirty || checkoutForm.controls['level'].touched)" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls['level'].errors.required">
+                        Level is required.
+                    </div>
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                  <label for="level">Subjects</label><br/>
+                  <input type="checkbox" class="form-check-input" formControlName="subjects" value="Spring" id="subjects1" (change)="onCheckboxChange($event)">
+                  &nbsp;<label class="form-check-label" for="subjects1">Spring</label><br/>
+                  <input type="checkbox" class="form-check-input" formControlName="subjects" value="Java" id="subjects2" (change)="onCheckboxChange($event)">
+                  &nbsp;<label class="form-check-label" for="subjects2">Java</label><br/>
+                  <input type="checkbox" class="form-check-input" formControlName="subjects" value="Angular" id="subjects3" (change)="onCheckboxChange($event)">
+                  &nbsp;<label class="form-check-label" for="subjects3">Angular</label><br/>
+                  <input type="checkbox" class="form-check-input" formControlName="subjects" value="HTML" id="subjects4" (change)="onCheckboxChange($event)">
+                  &nbsp;<label class="form-check-label" for="subjects4">HTML</label><br/>
+                  <input type="checkbox" class="form-check-input" formControlName="subjects" value="AWS" id="subjects5" (change)="onCheckboxChange($event)">
+                  &nbsp;<label class="form-check-label" for="subjects5">AWS</label><br/>
+                </div> 
+                <button type="submit" class="button btn btn-primary">Add Student</button>
+              </form>
+        </div>
+    </div>
+</div>
+
+

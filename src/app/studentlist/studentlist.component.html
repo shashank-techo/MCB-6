@@ -1,0 +1,37 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-xs-10 col-md-10">
+            <!-- <div class="col-sm-10 col-xs-10 col-md-10"> -->
+                <h3 >Student List</h3>
+            <!-- </div> -->
+            
+          </div>
+    </div>
+    <div class = "row">
+        <div class="col-sm-10 col-xs-10 col-md-10">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Level</th>
+                    <th scope="col">Subjects</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr  *ngFor = "let student of studentlist">
+                    <th scope="row">{{student.studentId}}</th>
+                    <td>{{student.studentName}}</td>
+                    <td>{{student.level}}</td>
+                    <td>{{student.subjects}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div> 
+    </div> 
+</div>
+
+
+
